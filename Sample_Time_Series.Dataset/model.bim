@@ -1,0 +1,376 @@
+{
+  "compatibilityLevel": 1550,
+  "model": {
+    "annotations": [
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "0"
+      },
+      {
+        "name": "PBIDesktopVersion",
+        "value": "2.118.621.0 (23.06)"
+      },
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"S&P 500 Stock Prices 2014-2017\"]"
+      },
+      {
+        "name": "PBI_ProTooling",
+        "value": "[\"DevMode\"]"
+      }
+    ],
+    "culture": "en-US",
+    "cultures": [
+      {
+        "name": "en-US",
+        "linguisticMetadata": {
+          "content": {
+            "DynamicImprovement": "HighConfidence",
+            "Language": "en-US",
+            "Version": "1.0.0"
+          },
+          "contentType": "json"
+        }
+      }
+    ],
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "relationships": [
+      {
+        "name": "e945c5fe-7add-47fb-9ad3-666aa8f17869",
+        "fromColumn": "date",
+        "fromTable": "S&P 500 Stock Prices 2014-2017",
+        "toColumn": "Date",
+        "toTable": "dimDate"
+      },
+      {
+        "name": "002ad7b3-66aa-4fc1-934f-a6c0466f3bde",
+        "crossFilteringBehavior": "bothDirections",
+        "fromColumn": "Date",
+        "fromTable": "TimePeriod",
+        "toColumn": "TimeStamp",
+        "toTable": "dimDate"
+      }
+    ],
+    "sourceQueryCulture": "en-US",
+    "tables": [
+      {
+        "name": "S&P 500 Stock Prices 2014-2017",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "close",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "4e2883b6-1a8b-40e3-904f-420a558fb12b",
+            "sourceColumn": "close",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "4dc95070-fcf8-40ed-88e7-ba9e39b0d7dd",
+            "sourceColumn": "date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "high",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "0fd3545f-86a9-4eee-b8c8-eacf4aff7495",
+            "sourceColumn": "high",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "low",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "8589f082-c35a-4e05-9724-802a19ec881c",
+            "sourceColumn": "low",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "open",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "df87782e-bf12-4e58-aaf6-08b23d7ca1b5",
+            "sourceColumn": "open",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "symbol",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "d4775bf3-34f7-41e1-9529-280adaae593c",
+            "sourceColumn": "symbol",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "volume",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "9e2ff1fb-63fa-4833-baff-4fb417dbf5c7",
+            "sourceColumn": "volume",
+            "summarizeBy": "sum"
+          }
+        ],
+        "lineageTag": "c5ec697d-992b-4aff-b97f-c27afa068203",
+        "partitions": [
+          {
+            "name": "S&P 500 Stock Prices 2014-2017-61383164-23ca-427d-b808-4374206c763e",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(\"C:\\Users\\akhthoga\\Documents\\PoweBi\\1Sample\\S&P 500 Stock Prices 2014-2017.csv\"),[Delimiter=\",\", Columns=7, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"symbol\", type text}, {\"date\", type date}, {\"open\", type number}, {\"high\", type number}, {\"low\", type number}, {\"close\", type number}, {\"volume\", Int64.Type}})",
+                "in",
+                "    #\"Changed Type\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "TimePeriod",
+        "annotations": [
+          {
+            "name": "PBI_Id",
+            "value": "e5624c0c45aa4cecbbe80fc5595d94f6"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Attribute",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "7a515bbc-1519-4659-a101-d0171cce23b5",
+            "sourceColumn": "[Attribute]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "2157897f-cc03-44e9-acce-d3ebbbddab24",
+            "sourceColumn": "[Date]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "DisplayValue",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "8646e0e7-a166-41bf-b58f-f3ef0e34bc2f",
+            "sourceColumn": "[DisplayValue]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Sort",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "expression": "[Attribute]&\"-\"&[DisplayValue]",
+            "isDataTypeInferred": true,
+            "lineageTag": "76cb84e3-2b71-49a0-8be5-5c0c2e4859de",
+            "summarizeBy": "none",
+            "type": "calculated"
+          }
+        ],
+        "lineageTag": "669d3471-d94d-41d8-bf21-48f7de8dfdd3",
+        "partitions": [
+          {
+            "name": "TimePeriod-d04a73b4-b63a-4f30-b84f-b1ff246de0db",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "",
+                "var minDat = MIN(dimDate[Date])",
+                "var maxDat = MAX(dimDate[Date])",
+                "/*VAR TodayDate = MAX('S&P 500 Stock Prices 2014-2017'[date])",
+                "VAR YesterdayDate = TodayDate-1",
+                "VAR YearStart = CALCULATE(STARTOFYEAR('dimDate'[Date]),YEAR('dimDate'[Date]) = YEAR(TodayDate))",
+                "VAR QuarterStart = CALCULATE(STARTOFQUARTER('dimDate'[Date]),YEAR('dimDate'[Date]) = YEAR(TodayDate),QUARTER('dimDate'[Date]) = QUARTER(TodayDate))",
+                "VAR MonthStart = CALCULATE(STARTOFMONTH('dimDate'[Date]),YEAR('dimDate'[Date]) = YEAR(TodayDate),MONTH('dimDate'[Date]) = MONTH(TodayDate))*/",
+                "",
+                "var Result = ",
+                "UNION(",
+                "    ADDCOLUMNS(CALENDAR(minDat,maxDat),",
+                "    \"Attribute\",\"Year\",",
+                "    \"DisplayValue\", FORMAT([Date],\"YYYY\")",
+                "    ),",
+                "    ADDCOLUMNS(CALENDAR(minDat,maxDat),",
+                "    \"Attribute\",\"Month\",",
+                "    \"DisplayValue\", FORMAT([Date],\"MMM YYYY\")",
+                "    ),",
+                "    ADDCOLUMNS(",
+                "        CALENDAR(minDat,maxDat),",
+                "    \"Attribute\",\"Date\",",
+                "    \"DisplayValue\", [Date]",
+                "    )",
+                ")",
+                "",
+                "Return",
+                "    Result",
+                "",
+                ""
+              ],
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "dimDate",
+        "annotations": [
+          {
+            "name": "PBI_Id",
+            "value": "b891624eaf144571a3a094367e613ebe"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "dateTime",
+            "expression": "dimDate[TimeStamp]",
+            "formatString": "Short Date",
+            "isDataTypeInferred": true,
+            "lineageTag": "36b2bdde-f285-4a80-ba36-727759784e29",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "TimeStamp",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "isDataTypeInferred": true,
+            "isNameInferred": false,
+            "lineageTag": "ab6c54aa-26e2-4753-b6d3-83d10300dc51",
+            "sourceColumn": "[Date]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          }
+        ],
+        "lineageTag": "774b35db-393c-427a-b209-a2d14205ccb7",
+        "partitions": [
+          {
+            "name": "dimDate-0b0e1d26-bd53-43b3-a37e-44c96c50ab70",
+            "mode": "import",
+            "source": {
+              "expression": "CALENDAR(MIN('S&P 500 Stock Prices 2014-2017'[date]),TODAY()) ",
+              "type": "calculated"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

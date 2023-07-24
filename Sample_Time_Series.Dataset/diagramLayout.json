@@ -1,0 +1,60 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "nodeIndex": "S&P 500 Stock Prices 2014-2017",
+          "nodeLineageTag": "c5ec697d-992b-4aff-b97f-c27afa068203",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 396.2,
+            "y": 0
+          },
+          "nodeIndex": "dimDate",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 270.4,
+            "y": 251
+          },
+          "nodeIndex": "TimePeriod",
+          "nodeLineageTag": "669d3471-d94d-41d8-bf21-48f7de8dfdd3",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 3
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

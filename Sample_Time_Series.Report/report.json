@@ -1,0 +1,78 @@
+{
+  "config": "{\"version\":\"5.44\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY23SU04\",\"version\":\"5.45\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"useEnhancedTooltips\":true,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY23SU04",
+            "path": "BaseThemes/CY23SU04.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Page 1",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "ReportSection",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"1163bdcfdf8c430f306d\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":180.92307692307693,\"z\":2000,\"width\":1208.6153846153845,\"height\":382.7692307692308,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"clusteredColumnChart\",\"projections\":{\"Y\":[{\"queryRef\":\"Sum(S&P 500 Stock Prices 2014-2017.high)\"}],\"Category\":[{\"queryRef\":\"TimePeriod.DisplayValue\",\"active\":true}],\"Tooltips\":[{\"queryRef\":\"Min(TimePeriod.Date)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"S&P 500 Stock Prices 2014-2017\",\"Type\":0},{\"Name\":\"t\",\"Entity\":\"TimePeriod\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"high\"}},\"Function\":0},\"Name\":\"Sum(S&P 500 Stock Prices 2014-2017.high)\",\"NativeReferenceName\":\"high\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"DisplayValue\"},\"Name\":\"TimePeriod.DisplayValue\",\"NativeReferenceName\":\"DisplayValue\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Date\"}},\"Function\":3},\"Name\":\"Min(TimePeriod.Date)\",\"NativeReferenceName\":\"Earliest Date\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Date\"}},\"Function\":3}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[{\"expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"S&P 500 Stock Prices 2014-2017\"}},\"Property\":\"high\"}},\"Function\":0}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"S&P 500 Stock Prices 2014-2017\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Not\":{\"Expression\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"high\"}},\"Function\":0}},\"Right\":{\"Literal\":{\"Value\":\"null\"}}}}}}}]},\"type\":\"Advanced\",\"howCreated\":0,\"isHiddenInViewMode\":false}]",
+          "height": 382.77,
+          "width": 1208.62,
+          "x": 0.00,
+          "y": 180.92,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"1ba25a6c65dc532e7b7a\",\"layouts\":[{\"id\":0,\"position\":{\"x\":855.3846153846154,\"y\":24.615384615384617,\"z\":4000,\"width\":222.76923076923077,\"height\":66.46153846153847,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"TimeLine.Time-Dimension\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"TimeLine\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Time-Dimension\"},\"Name\":\"TimeLine.Time-Dimension\",\"NativeReferenceName\":\"Time-Dimension\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"slider\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"general\":[{\"properties\":{\"orientation\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}}}}]}}}",
+          "filters": "[{\"name\":\"Filterfe7db7e6424be9cdcd8b\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"TimePeriod\"}},\"Property\":\"Attribute\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"TimePeriod\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Attribute\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Month'\"}}],[{\"Literal\":{\"Value\":\"'Year'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{}}]",
+          "height": 66.46,
+          "width": 222.77,
+          "x": 855.38,
+          "y": 24.62,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"83e38f07ed136bd69fa2\",\"layouts\":[{\"id\":0,\"position\":{\"x\":56.61538461538461,\"y\":36.92307692307692,\"z\":0,\"width\":222.76923076923077,\"height\":54.15384615384615,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"dimDate.Date\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dimDate\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Date\"},\"Name\":\"dimDate.Date\",\"NativeReferenceName\":\"Date\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Date\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Between'\"}}}}}],\"slider\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 54.15,
+          "width": 222.77,
+          "x": 56.62,
+          "y": 36.92,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"986badc5b33a0e4196b3\",\"layouts\":[{\"id\":0,\"position\":{\"x\":604.3076923076923,\"y\":30.76923076923077,\"z\":1000,\"width\":222.76923076923077,\"height\":66.46153846153847,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"TimePeriod.DisplayValue\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"TimePeriod\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"DisplayValue\"},\"Name\":\"TimePeriod.DisplayValue\",\"NativeReferenceName\":\"DisplayValue\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"DisplayValue\"}}}]},\"expansionStates\":[{\"roles\":[\"Values\"],\"levels\":[{\"queryRefs\":[\"TimePeriod.DisplayValue\"],\"isCollapsed\":true,\"identityKeys\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"TimePeriod\"}},\"Property\":\"DisplayValue\"}}],\"isPinned\":true}],\"root\":{\"identityValues\":null}}],\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"slider\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"general\":[{\"properties\":{\"orientation\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}}}}]}}}",
+          "filters": "[{\"name\":\"Filterfe7db7e6424be9cdcd8b\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"TimePeriod\"}},\"Property\":\"Attribute\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"TimePeriod\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Attribute\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Month'\"}}],[{\"Literal\":{\"Value\":\"'Year'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{}}]",
+          "height": 66.46,
+          "width": 222.77,
+          "x": 604.31,
+          "y": 30.77,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"e0029e9fead8f208069d\",\"layouts\":[{\"id\":0,\"position\":{\"x\":305.2307692307692,\"y\":30.76923076923077,\"z\":3000,\"width\":222.76923076923077,\"height\":66.46153846153847,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"TimePeriod.Attribute\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"TimePeriod\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Attribute\"},\"Name\":\"TimePeriod.Attribute\",\"NativeReferenceName\":\"Attribute\"}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"slider\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"general\":[{\"properties\":{\"orientation\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}},\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"TimePeriod\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Attribute\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Date'\"}}]]}}}]}}}}],\"selection\":[{\"properties\":{\"selectAllCheckboxEnabled\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"strictSingleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 66.46,
+          "width": 222.77,
+          "x": 305.23,
+          "y": 30.77,
+          "z": 3000.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}
